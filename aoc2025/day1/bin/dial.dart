@@ -13,13 +13,13 @@ class Dial {
       throw "Turns needs to be a integer";
     }
     switch (direction) {
-      case "L": rotateLeft(turns);
-      case "R": rotateRight(turns);
+      case "L": _rotateLeft(turns);
+      case "R": _rotateRight(turns);
       default: throw "Illegal direction!";
     }
   }
 
-  void rotateLeft(int turns) {
+  void _rotateLeft(int turns) {
     for (int i = 0; i < turns; i++) {
       if (_position == 0) {
         _position = 99;
@@ -32,7 +32,7 @@ class Dial {
     }
   }
 
-  void rotateRight(int turns) {
+  void _rotateRight(int turns) {
     for (int i = 0; i < turns; i++) {
       if (_position == 99) {
         _position = 0;

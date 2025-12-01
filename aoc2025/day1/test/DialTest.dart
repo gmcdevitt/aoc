@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import '../../bin/day1/dial.dart';
+import '../bin/dial.dart';
 
 void main() {
   test('turning the dial right 8 times from 11 makes it point at 19', () {
