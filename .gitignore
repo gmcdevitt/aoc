@@ -34,3 +34,7 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+
+### Specific ignores for AOC
+# Ignore input files so they aren't shared
+**/input.txt
