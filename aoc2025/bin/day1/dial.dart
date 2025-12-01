@@ -1,7 +1,8 @@
 class Dial {
   int _position;
+  final Function()? _zeroCallback;
 
-  Dial(this._position);
+  Dial(this._position, [this._zeroCallback]);
 
   void rotate(String instruction) {
     // Get the first character
@@ -25,6 +26,9 @@ class Dial {
         continue;
       }
       --_position;
+      if (_position == 0 && _zeroCallback != null) {
+          _zeroCallback();
+      }
     }
   }
 
@@ -32,6 +36,9 @@ class Dial {
     for (int i = 0; i < turns; i++) {
       if (_position == 99) {
         _position = 0;
+        if(_zeroCallback != null) {
+          _zeroCallback();
+        }
         continue;
       }
       ++_position;

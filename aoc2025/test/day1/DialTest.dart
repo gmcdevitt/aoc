@@ -33,4 +33,11 @@ void main() {
     dial.rotate("R1");
     expect(dial.position(), equals(0));
   });
+  test('if the dial hits 0, the callback is invoked', () {
+    var invokeCount = 0;
+    incrementInvokeCount() => ++invokeCount;
+    var dial = Dial(1, incrementInvokeCount);
+    dial.rotate("L101");
+    expect(invokeCount, equals(2));
+  });
 }
