@@ -2,6 +2,7 @@
 
 # IntelliJ project files
 .idea
+**/.idea/
 *.iml
 out
 gen
@@ -34,5 +35,3 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
-
-/.idea/
