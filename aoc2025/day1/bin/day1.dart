@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dial.dart';
 
 void main() {
-  var input = File("./bin/day1/input.txt");
+  var input = File("./day1/bin/input.txt");
   List<String> rotations = input.readAsLinesSync();
   int zeroCount = 0;
   countZero() => ++zeroCount;
