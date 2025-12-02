@@ -7,22 +7,25 @@ void main() {
     var rangeString = "11-22";
     var range = ProductRange.fromString(rangeString);
     var invalidIds = range.invalidIds();
-    expect(invalidIds.length, equals(2));
-    expect(invalidIds, containsAll(["11", "22"]));
+    expect(invalidIds, equals(["11", "22"]));
   });
-  test('95-115 has one invalid ID, 99.', () {
+  test('998-1012 has two invalid IDs, 999 and 1010..', () {
+    var rangeString = "998-1012";
+    var range = ProductRange.fromString(rangeString);
+    var invalidIds = range.invalidIds();
+    expect(invalidIds, equals(["999", "1010"]));
+  });
+  test('95-115 has two invalid ID, 111.', () {
     var rangeString = "95-115";
     var range = ProductRange.fromString(rangeString);
     var invalidIds = range.invalidIds();
-    expect(invalidIds.length, equals(1));
-    expect(invalidIds, contains("99"));
+    expect(invalidIds, equals(["99", "111"]));
   });
   test('1188511880-1188511890 has one invalid ID, 1188511885.', () {
     var rangeString = "1188511880-1188511890";
     var range = ProductRange.fromString(rangeString);
     var invalidIds = range.invalidIds();
-    expect(invalidIds.length, equals(1));
-    expect(invalidIds, contains("1188511885"));
+    expect(invalidIds, equals(["1188511885"]));
   });
   test('1698522-1698528 contains no invalid IDs.', () {
     var rangeString = "1698522-1698528";

@@ -20,10 +20,9 @@ class ProductRange {
       for (var char in number.split('')) {
         buffer = buffer + char;
         String substring = number.substring(buffer.length, number.length);
-        var checkedWholeString = substring.length == buffer.length;
         var containsBuffer = substring.startsWith(buffer);
         var matchesWholeString = number.split(buffer).every((s) => s.isEmpty);
-        if (checkedWholeString && containsBuffer && matchesWholeString) {
+        if (containsBuffer && matchesWholeString) {
           invalidIds.add(number);
           break;
         }
