@@ -12,4 +12,19 @@ void main() {
     List<PaperRoll> accessibleRolls = rack.accessibleRolls();
     expect(accessibleRolls.length, equals(13));
   });
+  test('Paper rack removal test, should be able to remove 43 rolls', () {
+    var file = File("./day4/test/input.txt");
+    List<String> rows = file.readAsLinesSync();
+    var rack = PaperRack.fromList(rows);
+
+    int removedCount = 0;
+    List<PaperRoll> accessibleRolls = rack.accessibleRolls();
+    while (accessibleRolls.isNotEmpty) {
+      removedCount += accessibleRolls.length;
+      rack.removeRolls(accessibleRolls);
+      // Re-check
+      accessibleRolls = rack.accessibleRolls();
+    }
+    expect(removedCount, equals(43));
+  });
 }

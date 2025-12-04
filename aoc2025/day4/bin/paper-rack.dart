@@ -71,4 +71,11 @@ class PaperRack {
 
     return null;
   }
+
+  void removeRolls(List<PaperRoll> rollsToRemove) {
+    for (var roll in rollsToRemove) {
+      // Remove the roll.
+      _rack[roll.row][roll.col] = _empty;
+    }
+  }
 }
